@@ -1,0 +1,24 @@
+[
+  {
+    "id": "aceite_001",
+    "category": "Aceites & Lubricantes",
+    "title": "Lady Gozza",
+    "short": "Lady Gooza é um gel intensificador de orgasmo projetado para estimular a região clitoriana e aumentar o apetite sexual. Sua fórmula poderosa proporciona uma combinação de sensações, incluindo aquecimento, pulsação, vibração, lubrificação, excitação e sensibilização. Além disso, possui uma ponta vibratória que auxilia na circulação sanguínea do clitóris, proporcionando uma penetração mais agradável. Este gel também pode ser utilizado durante o sexo oral, oferecendo um sabor doce e suave que adiciona uma dimensão extra à experiência. Em suma, o Lady Gooza promete uma noite relaxante e momentos intensos de prazer sexual para os usuários e seus parceiros.",
+    "presentation": "100 ml",
+    "price": 150.0,
+    "currency": "BR",
+    "media": "images/LadyGooza01.png",
+    "audio": "audios/producto1.mp3"
+  },
+  {
+    "id": "acc_001",
+    "category": "Accesorios",
+    "title": "Vibrador de Calzinha",
+    "short": "Compacto y práctico.",
+    "presentation": "1 pc",
+    "price": 350,
+    "currency": "BR",
+    "media": "images/Vibrador.webp",
+    "audio": "audios/producto1.mp3"
+  }
+]
