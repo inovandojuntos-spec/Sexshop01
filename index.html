@@ -25,7 +25,7 @@
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       background:var(--bg);
       color:var(--text);
-      overflow:hidden; /* estilo app */
+      overflow:hidden;
     }
 
     .app{
@@ -82,11 +82,13 @@
       user-select:none;
       -webkit-tap-highlight-color: transparent;
     }
+
     .topbar-navBtn:hover{
       border-color: rgba(255,255,255,0.26);
       background:rgba(0,0,0,0.50);
       transform: scale(1.02);
     }
+
     .topbar-navBtn:active{ transform: scale(0.98); }
     .topbar-navBtn[disabled]{ opacity:.40; cursor:not-allowed; transform:none !important; }
 
@@ -95,6 +97,7 @@
       justify-content:center;
       flex: 1 1 auto;
     }
+
     .logo-center img{
       width:150px;
       height:150px;
@@ -143,7 +146,7 @@
       background: transparent;
       border: none;
       border-radius: 0;
-      padding: 6px 2px;   /* mantiene aire pero sin “caja” */
+      padding: 6px 2px;
       box-shadow: none;
     }
 
@@ -162,6 +165,7 @@
       line-height:1.2;
       margin:0;
     }
+
     .pCat{
       margin-top:6px;
       font-size:12px;
@@ -172,14 +176,12 @@
       max-width: 42ch;
     }
 
-    /* Contenedor donde antes iba el short */
     .pShort{
       margin-top:10px;
       width:100%;
       max-width:100%;
     }
 
-    /* Mini reproductor */
     .audioCard{
       border:none;
       background:#000;
@@ -187,6 +189,7 @@
       padding:0;
       box-shadow:none;
     }
+
     .audioTop{
       display:flex;
       align-items:center;
@@ -194,6 +197,7 @@
       gap:10px;
       margin-bottom:8px;
     }
+
     .audioLabel{
       font-size:12px;
       font-weight:900;
@@ -201,6 +205,7 @@
       text-transform:uppercase;
       color:rgba(255,255,255,0.85);
     }
+
     .audioHint{
       font-size:11px;
       color:rgba(255,255,255,0.60);
@@ -209,28 +214,25 @@
       text-overflow:ellipsis;
       max-width: 34ch;
     }
-    /* Mini reproductor */
+
     audio{
       width:100%;
       height:34px;
       background:transparent;
       border-radius:12px;
       outline:none;
-
-      /* Mantiene iconos claros */
       filter: invert(1) hue-rotate(180deg);
     }
 
-    /* Quita el “panel” (rectángulo) y lo vuelve transparente (Chrome/Edge/Safari) */
     audio::-webkit-media-controls-panel{
       background-color: transparent !important;
     }
+
     audio::-webkit-media-controls-enclosure{
       background-color: transparent !important;
       border-radius:12px;
     }
 
-    /* A veces el “fondo” viene de aquí en algunos builds */
     audio::-webkit-media-controls{
       background-color: transparent !important;
     }
@@ -248,22 +250,8 @@
       cursor:pointer;
       box-shadow:0 14px 30px rgba(0,0,0,0.65);
     }
-    .unlockBtn[hidden]{ display:none; }
 
-    .priceBox{
-      text-align:right;
-      min-width: 92px;
-    }
-    .price{
-      font-weight:900;
-      font-size:16px;
-      letter-spacing:.2px;
-    }
-    .currency{
-      font-size:11px;
-      color:var(--muted);
-      margin-top:2px;
-    }
+    .unlockBtn[hidden]{ display:none; }
 
     .meta{
       margin-top:10px;
@@ -295,18 +283,20 @@
       padding:0 !important;
       border-radius:0 !important;
       color:rgba(255,255,255,0.78);
-      display: none;
+      display:none;
     }
 
     .actions{
       margin-top:12px;
     }
+
     .actionBar{
       display:grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap:10px;
       align-items:stretch;
     }
+
     .iconBtn{
       position:relative;
       width:100%;
@@ -325,13 +315,15 @@
       align-items:center;
       justify-content:center;
       gap:4px;
-      min-height:54px;
+      min-height:62px;
     }
+
     .iconBtn:hover{
       border-color: rgba(255,255,255,0.24);
       background:linear-gradient(180deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.06) 100%);
       transform: translateY(-1px);
     }
+
     .iconBtn:active{ transform: translateY(0px); }
     .iconBtn[disabled]{ opacity:.55; cursor:not-allowed; transform:none !important; }
 
@@ -339,13 +331,17 @@
       font-size:18px;
       line-height:1;
     }
+
     .iconBtn .lbl{
-      font-size:11px;
-      letter-spacing:.3px;
+      font-size:10px;
+      letter-spacing:.2px;
       font-weight:800;
       text-transform:uppercase;
       color:rgba(255,255,255,0.82);
+      text-align:center;
+      line-height:1.15;
     }
+
     .badge{
       position:absolute;
       top:8px;
@@ -381,6 +377,7 @@
       display:none;
       box-shadow:0 16px 38px rgba(0,0,0,0.70);
     }
+
     .toast.show{ display:block; }
 
     @media (max-height: 720px){
@@ -407,7 +404,7 @@
 
       <div class="stage" id="stage">
         <div class="mediaBox" id="mediaBox"></div>
-        <div class="toast" id="toast">Agregado al carrito ✓</div>
+        <div class="toast" id="toast">Acción realizada ✓</div>
       </div>
 
       <div class="bottom">
@@ -417,13 +414,8 @@
               <p class="pTitle" id="pTitle">Cargando…</p>
               <div class="pCat" id="pCat"></div>
             </div>
-            <div class="priceBox">
-              <div class="price" id="pPrice">—</div>
-              <div class="currency" id="pCurrency"></div>
-            </div>
           </div>
 
-          <!-- AQUÍ VA EL MINI PLAYER (reemplaza el short) -->
           <div class="pShort" id="pShort"></div>
 
           <div class="meta">
@@ -433,20 +425,20 @@
 
           <div class="actions">
             <div class="actionBar">
-              <button class="iconBtn" id="cartBtn" aria-label="Carrito">
-                <span class="ico">🛒</span>
-                <span class="lbl">Carrito</span>
+              <button class="iconBtn" id="cartBtn" aria-label="Items Eroticos">
+                <span class="ico">🔥</span>
+                <span class="lbl">Items Eroticos</span>
                 <span class="badge" id="cartBadge">0</span>
               </button>
 
-              <button class="iconBtn" id="addBtn" aria-label="Agregar al carrito">
-                <span class="ico">＋</span>
-                <span class="lbl">Agregar</span>
+              <button class="iconBtn" id="infoBtn" aria-label="Playlist">
+                <span class="ico">🎧</span>
+                <span class="lbl">Playlist</span>
               </button>
 
-              <button class="iconBtn" id="exitBtn" aria-label="Salir">
+              <button class="iconBtn" id="exitBtn" aria-label="Voltar">
                 <span class="ico">⟵</span>
-                <span class="lbl">Salir</span>
+                <span class="lbl">Voltar</span>
               </button>
             </div>
           </div>
@@ -472,16 +464,14 @@
   const mediaBox = document.getElementById("mediaBox");
   const prevBtn  = document.getElementById("prevBtn");
   const nextBtn  = document.getElementById("nextBtn");
-  const addBtn   = document.getElementById("addBtn");
+  const infoBtn  = document.getElementById("infoBtn");
   const cartBtn  = document.getElementById("cartBtn");
   const exitBtn  = document.getElementById("exitBtn");
   const toast    = document.getElementById("toast");
 
   const pTitle = document.getElementById("pTitle");
   const pCat   = document.getElementById("pCat");
-  const pShort = document.getElementById("pShort"); // ahora será contenedor del player
-  const pPrice = document.getElementById("pPrice");
-  const pCurrency = document.getElementById("pCurrency");
+  const pShort = document.getElementById("pShort");
   const pPresentation = document.getElementById("pPresentation");
   const pIndex = document.getElementById("pIndex");
   const cartBadge = document.getElementById("cartBadge");
@@ -492,44 +482,33 @@
   let products = [];
   let idx = 0;
 
-  // bloqueo hasta que termine audio (ya no se usa para deshabilitar navegación)
   let audioLocked = true;
   let currentAudioEl = null;
 
-  function safeJSONParse(s){ try { return JSON.parse(s); } catch { return null; } }
+  function safeJSONParse(s){
+    try { return JSON.parse(s); }
+    catch { return null; }
+  }
+
   function isVideo(path){
     const p = (path || "").toLowerCase();
     return p.endsWith(".mp4") || p.endsWith(".webm") || p.endsWith(".ogg");
   }
-  function money(v){
-    const n = Number(v);
-    if (!Number.isFinite(n)) return "—";
-    return n.toFixed(2);
-  }
+
   function showToast(msg){
     toast.textContent = msg;
     toast.classList.add("show");
-    setTimeout(() => toast.classList.remove("show"), 1100);
+    setTimeout(() => toast.classList.remove("show"), 1400);
   }
 
   function getCart(){
     const c = safeJSONParse(localStorage.getItem(CART_KEY));
     return Array.isArray(c) ? c : [];
   }
+
   function setCart(cart){
     localStorage.setItem(CART_KEY, JSON.stringify(cart));
     if (cartBadge) cartBadge.textContent = String(cart.length);
-  }
-  function addToCart(product){
-    const cart = getCart();
-    cart.push({
-      id: product.id,
-      title: product.title,
-      price: product.price,
-      currency: product.currency || "",
-      ts: new Date().toISOString()
-    });
-    setCart(cart);
   }
 
   function setLastViewed(product){
@@ -540,13 +519,9 @@
   }
 
   function setNavLocked(locked){
-    audioLocked = !!locked; // lo dejamos por si quieres usarlo después
-    // PERO ya NO deshabilitamos navegación
+    audioLocked = !!locked;
     prevBtn.disabled = products.length <= 1;
     nextBtn.disabled = products.length <= 1;
-
-    // opcional: feedback
-    //if (locked) showToast("Escucha el audio para continuar");
   }
 
   function stopCurrentAudio(){
@@ -590,37 +565,28 @@
   function renderInfo(product){
     pTitle.textContent = (product.title || "Producto").toString();
     pCat.textContent = (product.category || "").toString();
-    pPrice.textContent = money(product.price);
-    pCurrency.textContent = (product.currency || "").toString();
     pPresentation.textContent = `Presentación: ${(product.presentation || "—").toString()}`;
     pIndex.textContent = `Producto: ${(product.sku || product.id || "—").toString()}`;
   }
 
   function renderAudioPlayer(product){
-    // limpia
     pShort.innerHTML = "";
 
     const wrap = document.createElement("div");
     wrap.className = "audioCard";
-
-    const top = document.createElement("div");
-    top.className = "audioTop";
 
     const audio = document.createElement("audio");
     audio.controls = true;
     audio.preload = "auto";
     audio.playsInline = true;
 
-    // fuente
     const aSrc = (product.audio || "").toString().trim();
     if (aSrc) audio.src = aSrc;
 
-    // intenta autoplay cuando el audio ya puede reproducirse
     audio.addEventListener("canplay", () => {
       audio.play().catch(() => {});
     }, { once: true });
 
-    // eventos
     audio.addEventListener("ended", () => {
       setNavLocked(false);
     });
@@ -628,30 +594,28 @@
     wrap.appendChild(audio);
     pShort.appendChild(wrap);
 
-    // guardar refs globales para frenar al cambiar
     currentAudioEl = audio;
-
-    // (ya no bloquea navegación, pero se mantiene el estado)
     setNavLocked(true);
 
-    // intentar autoplay (puede fallar por políticas)
     setTimeout(() => {
       if (!aSrc){
         setNavLocked(false);
         return;
       }
-      audio.play().catch(()=>{});
+      audio.play().catch(() => {});
     }, 80);
   }
 
   function updateNav(){
-    // navegación siempre disponible (solo se deshabilita si hay 0/1 productos)
     prevBtn.disabled = products.length <= 1;
     nextBtn.disabled = products.length <= 1;
   }
 
   function clampIdx(){
-    if (!products.length) { idx = 0; return; }
+    if (!products.length){
+      idx = 0;
+      return;
+    }
     if (idx < 0) idx = products.length - 1;
     if (idx >= products.length) idx = 0;
   }
@@ -667,8 +631,6 @@
       pTitle.textContent = "Sin productos";
       pCat.textContent = "";
       pShort.innerHTML = "";
-      pPrice.textContent = "—";
-      pCurrency.textContent = "";
       pPresentation.textContent = "Presentación: —";
       pIndex.textContent = "Producto: —";
       setNavLocked(false);
@@ -678,9 +640,7 @@
     clampIdx();
     const product = products[idx];
 
-    // CLAVE: al cambiar, detener el audio actual
     stopCurrentAudio();
-
     renderMedia(product);
     renderInfo(product);
     renderAudioPlayer(product);
@@ -708,7 +668,7 @@
         .filter(Boolean)
         .map((p, i) => ({
           id: p.id ?? i + 1,
-          title: p.title ?? p.name ?? `Producto ${i+1}`,
+          title: p.title ?? p.name ?? `Producto ${i + 1}`,
           category: p.category ?? "",
           short: p.short ?? "",
           description: p.description ?? "",
@@ -736,24 +696,21 @@
   // =============================
   prevBtn.addEventListener("click", () => {
     idx--;
-    render(); // render() ya llama stopCurrentAudio()
+    render();
   });
 
   nextBtn.addEventListener("click", () => {
     idx++;
-    render(); // render() ya llama stopCurrentAudio()
-  });
-
-  addBtn.addEventListener("click", () => {
-    if (!products.length) return;
-    const p = products[idx];
-    addToCart(p);
-    showToast("Agregado al carrito ✓");
+    render();
   });
 
   cartBtn.addEventListener("click", () => {
     const cart = getCart();
-    showToast(`Carrito: ${cart.length}`);
+    showToast(`Items recomendados: ${cart.length}`);
+  });
+
+  infoBtn.addEventListener("click", () => {
+    showToast("Adicionales: playlist e información relevante");
   });
 
   exitBtn.addEventListener("click", () => {
@@ -802,9 +759,13 @@
     if (Math.abs(dy) < 8) return;
 
     wheelLock = true;
-    if (dy > 0) idx++; else idx--;
+    if (dy > 0) idx++;
+    else idx--;
     render();
-    setTimeout(() => (wheelLock = false), 220);
+
+    setTimeout(() => {
+      wheelLock = false;
+    }, 220);
   }, { passive: false });
 
   // =============================
